@@ -1,3 +1,5 @@
 rootProject.name = 'universiti-api'
 include 'auth-service'
+include 'user-service'
+include 'api-gateway'
 

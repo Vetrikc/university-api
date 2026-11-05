@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: api-gateway
+
+app:
+  gateway:
+    default-response-timeout: 30s
+    max-request-size: 2MB
+    routes:
+      users:
+        path: /api/users/**
+        uri: http://localhost:8081
+      orders:
+        path: /api/orders/**
+        uri: http://localhost:8082
+        timeout: 10s
+        auth-required: true
+      analytics:
+        path: /api/analytics/**
+        uri: http://analytics-service:8080://localhost:8082

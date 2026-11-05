@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  wiremock:
+    image: wiremock/wiremock:3.5.2
+    ports:
+      - "8081:8080"   # user-service mock
+      - "8082:8080"   # order-service mock (если нужен отдельный экземпляр)
+    volumes:
+      - ./wiremock:/home/wiremock
+    command: ["--global-response-templating"]

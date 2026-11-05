@@ -10,6 +10,8 @@ services:
       - "8080:8080"
     environment:
       SPRING_PROFILES_ACTIVE: docker
+      AUTH_SERVICE_URL: auth-service
+      USER_SERVICE_URL: user-service
       JWT_SECRET: ${GATEWAY_JWT_SECRET}
 
   auth-db:
